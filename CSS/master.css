@@ -1,0 +1,422 @@
+/* Start Global variable */
+:root {
+    --main-color:  #10cab7;
+    --secondary-color: #2c4755;
+    --section-background-color: #f6f6f6;
+}
+/* End Global Variable */
+ 
+/* Start Golbal Style */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Work Sans", sans-serif;
+}
+
+.container {
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+/* small */
+@media (min-width: 768px){
+    .container{
+        width: 750px;
+    }
+}
+
+/* Meduim */
+@media (min-width: 992px){
+    .container{
+        width: 970px;
+    }
+}
+/* Large */
+@media (min-width: 1200px){
+    .container{
+        width: 1170px;
+    }
+}
+/* End Global Style */
+
+/*Start Components*/
+.special-heading {
+    color: #abacad;
+    font-size: 100px;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: -4px;
+    margin: 0;
+}
+
+.special-heading + p{
+    color: #797979;
+    margin-top: -30px;
+    text-align: center;
+    font-size: 20px;
+}
+
+@media (max-width: 768px){
+    .special-heading {
+        font-size: 50px;
+    }
+    .special-heading + p {
+        margin: top -20px;
+    }
+}
+/*End Components*/
+/* Start Header */
+header{
+    padding: 20px;
+}
+header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    width: 40px;
+}
+header nav {
+    position: relative;
+}
+header nav .icon{
+    font-size: 30px;
+}
+header nav:hover ul {
+    display: block;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #f6f6f6;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 15px);
+    min-width: 200px;
+    display: none;
+}
+
+header nav ul::before {
+    content: "";
+    border-width: 10px;
+    border-style: solid;
+    position: absolute;
+    border-color: transparent transparent #f6f6f6 transparent;
+    right: 0px;
+    top: -20px;
+
+}
+
+header nav ul li a {
+    text-decoration: none;
+    display: block;
+    padding: 15px;
+    color: #333;
+    transition: 0.3s;
+}
+
+header nav ul li a:hover{
+    padding-left: 25px;
+}
+
+header nav ul li:not(:last-child) a{
+    border-bottom: 1px solid rgb(70, 64, 64);
+}
+/* End Header */
+
+/*Start landing page*/
+h1 p {
+    margin: 0;
+    padding: 0;
+}
+.landing {
+    background-image: url(../img/mont.jpeg);
+    background-size: cover;
+    height: calc(100vh - 88px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing .intro-text{
+    text-align: center;
+    width: 320px;
+}
+.landing .intro-text h1{
+    color: var(--main-color);
+    font-weight: bold;
+    font-size: 50px;
+}
+.landing .intro-text p {
+    font-size: 19px;
+    line-height: 1.8 ;
+}
+/*End landing page*/
+
+/*Start Features Section*/
+.features{
+    padding: 60px 0;
+    background-color: #f6f6f6;
+}
+
+.features .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(300px , 1fr));
+    grid-gap: 20px;
+}  
+
+.features .container .feat {
+    padding: 20px;
+    text-align: center;
+}
+.features .container .feat .icon{
+    color: var(--main-color);
+}
+.features .container .feat h3{
+    font-weight: 800;
+    margin: 30px 0;
+}
+
+.features .container .feat p {
+    line-height: 1.8;
+    color: #777;
+    font-size: 17px;
+}
+/*End Features Section*/
+
+/*Start services Section*/
+.services {
+    padding: 60px 0;
+}
+
+.services .container .service-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px , 1fr));
+    grid-gap: 30px;
+    margin-top: 100px;
+}
+.services .container .service-content .srv {
+    display: flex;
+    margin-bottom: 40px;
+}
+@media (max-width: 767px){
+    .services .container .service-content .srv {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.services .container .service-content .srv span {
+    color: var(--main-color);
+    flex-basis: 60px;
+}
+.services .container .service-content .srv .text {
+    flex: 1;
+}
+.services .container .service-content .srv h3 {
+    margin: 0 0 20px;
+}
+.services .container .service-content .srv .text p {
+    color: #444;
+    font-weight: 300;
+    line-height: 1.6;
+}
+.services .container .image{
+    text-align: center;
+    position: relative;
+}
+.services .container .service-content .image::before{
+    content: "";
+    background-color: var(--secondary-color);
+    width: 80px;
+    height: calc(100% + 100px);
+    z-index: -1;
+    top: -50px;
+    position: absolute;
+    right: 0;
+}
+.services .container .service-content .image img{
+    width: 260px;
+}
+@media (max-width: 1199px){
+    .services .container .service-content .image{
+        display: none;
+    }
+}
+/*End Services Section*/
+
+/* Start Portfolio Section */
+.portfolio{
+    margin-top: 60px;
+    padding-bottom: 60px;
+    background-color: var(--section-background-color);
+}
+.portfolio .contianer .portfolio-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(300px , 1fr));
+    grid-gap: 30px;
+    margin: 50px;
+    margin-top: 80px;
+    /* margin-left: 70px; */
+}
+.portfolio .portfolio-content .card{
+    background-color: white;
+}
+.portfolio .portfolio-content .card img{
+    max-width: 100%;
+}
+.portfolio .portfolio-content .card .info{
+    padding: 20px;
+}
+.portfolio .portfolio-content .card .info h3 {
+    margin: 0;
+}
+.portfolio .portfolio-content .card .info p {
+    color: #777;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+/* End POortfolio Section */
+
+/* Start About Section */
+.about {
+    padding-top: 60px;
+    padding-bottom: 120px;
+}
+.about .about-content{
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.about .about-content .image{
+    position: relative;
+    width: 250px;
+    height: 375px;
+}
+.about .about-content .image img {
+    max-width: 100%;
+}
+.about .about-content .image::before{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background-color: var(--secondary-color);
+    width: 100px;
+    height: calc(100% + 80px);
+    top: -40px;
+    left: -20px;
+    background-color: rgb(235, 236, 237);
+}
+.about .about-content .image::after{
+    content: "";
+    position: absolute;
+    z-index: -5;
+    width: 120px;
+    height: 300px;
+    right: 0;
+    border-left: 80px solid black;
+    border-bottom: 80px solid black;
+    top: -41px;
+    left: 200px;
+}
+.about .about-content .text{
+    /* flex: 1;
+    padding-left: 60px; */
+    flex-basis: calc(100% - 500px );
+}
+.about .about-content .text p:first-of-type {
+    font-weight: bold;
+    line-height: 2;
+    margin-bottom: 50px;
+}
+.about .about-content .text hr {
+    width: 50%;
+    display: inline-block;
+    border-color: var(--main-color);
+}
+.about .about-content .text p:last-of-type {
+    line-height: 2;
+    color: #777;
+}
+
+ @media (max-width: 991px){
+    .about .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about .about-content .image::after,
+    .about .about-content .image::before{
+        display: none;
+    }
+    .about .about-content .image{
+        margin: 0 auto 60px;
+    }
+ }
+/* End About Section */
+
+/* Start Contact Setion */
+.contact{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: var(--section-background-color);
+}
+.contact .info {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    text-align: center;
+}
+.contact .info .label {
+    color: var(--secondary-color);
+    font-weight: 800;
+    font-size: 35px;
+    letter-spacing: -2px;
+    margin-bottom: 15px;
+}
+.contact .info .link{
+    display: block;
+    font-size: 35px;
+    font-weight: 800;
+    color: var(--main-color);
+    text-decoration: none;
+}
+.contact .info .social{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 16px;
+}
+.contact .info .social i {
+    margin-left: 10px;
+    color: var(--secondary-color);
+}
+@media (max-width: 767px){
+    .contact .info .label,
+    .contact .info .link{
+        font-size: 25px;
+    }
+}
+/* End Contact Setion */
+/* Start Footer Section */
+.footer {
+    text-align: center;
+    font-size: 18px;
+    padding: 30px 10px;
+    background-color: var(--secondary-color);
+    color: white;
+}
+.footer span {
+    color: var(--main-color);
+}
+/* End Footer Section */
